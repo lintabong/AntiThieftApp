@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelectDeviceActivity">
+    tools:context=".SosActivity">
 
     <LinearLayout
         android:id="@+id/layoutHeader"
@@ -73,7 +73,8 @@
                 android:id="@+id/USSOS"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@mipmap/sos"/>
+                android:src="@mipmap/sos"
+                android:contentDescription="sos" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -89,17 +90,17 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/selectDevice"
+        android:layout_marginTop="28dp"
+        android:text="@string/emergency"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/layoutContainerSD"
         app:layout_constraintTop_toBottomOf="@+id/layoutContainerSD" />
 
     <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_width="297dp"
+        android:layout_height="286dp"
         android:layout_marginTop="24dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,31 +123,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
-                    android:text="@string/dev1" />
+                    android:text="@string/police" />
 
                 <EditText
                     android:id="@+id/inputIP1"
                     android:layout_width="220dp"
-                    android:layout_height="60dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/input_style"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="@string/inputIP"/>
+                    android:text="110"
+                    tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/connect1"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="15dp"
-                android:layout_height="60dp"
+            <ImageView
+                android:id="@+id/callAmbulance"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="bottom"
-                android:text="@string/connect"/>
+                android:layout_marginLeft="15dp"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_menu_call"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:layout_editor_absoluteX="56dp"
+                tools:layout_editor_absoluteY="315dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -159,31 +165,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
-                    android:text="@string/dev2" />
+                    android:text="@string/fireFighter" />
 
                 <EditText
                     android:id="@+id/inputIP2"
                     android:layout_width="220dp"
-                    android:layout_height="60dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/input_style"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="@string/inputIP" />
+                    android:text="113"
+                    tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/connect2"
-                android:layout_marginLeft="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+            <ImageView
+                android:id="@+id/callFF"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="bottom"
-                android:text="@string/connect" />
+                android:layout_marginLeft="15dp"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_menu_call"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:layout_editor_absoluteX="56dp"
+                tools:layout_editor_absoluteY="315dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -196,65 +207,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
-                    android:text="@string/dev3" />
+                    android:text="@string/ambulance" />
 
                 <EditText
                     android:id="@+id/inputIP3"
                     android:layout_width="220dp"
-                    android:layout_height="60dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/input_style"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="@string/inputIP" />
+                    android:text="110"
+                    tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/connect3"
-                android:layout_marginLeft="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+            <ImageView
+                android:id="@+id/callPolice"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="bottom"
-                android:text="@string/connect" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/SDtextDev4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="@string/dev4" />
-
-                <EditText
-                    android:id="@+id/inputIP4"
-                    android:layout_width="220dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/input_style"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="@string/inputIP" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/connect4"
                 android:layout_marginLeft="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="bottom"
-                android:text="@string/connect" />
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_menu_call"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:layout_editor_absoluteX="56dp"
+                tools:layout_editor_absoluteY="315dp" />
         </LinearLayout>
-
-
     </LinearLayout>
 
     <LinearLayout

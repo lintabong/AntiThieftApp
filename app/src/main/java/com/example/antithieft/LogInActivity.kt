@@ -18,9 +18,12 @@ class LogInActivity : AppCompatActivity() {
             Uname = textUsername.text.toString()
             PassW = textPassword.text.toString()
 
-
-            Toast.makeText(applicationContext, "wrong Username or Password",Toast.LENGTH_LONG).show()
-
+            if (Uname.contains("admin") && PassW.contains("admin")){
+                intent = Intent(this, SelectDeviceActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(applicationContext, "wrong Username or Password",Toast.LENGTH_LONG).show()
+            }
         }
     }
 }
