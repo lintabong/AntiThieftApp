@@ -3,8 +3,11 @@ package com.example.antithieft
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telecom.Call
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_log_in.*
+import retrofit2.Callback
+import retrofit2.Response
 
 var Uname:String = ""
 var PassW:String = ""
@@ -14,16 +17,38 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
 
-        ButLogin.setOnClickListener(){
-            Uname = textUsername.text.toString()
-            PassW = textPassword.text.toString()
 
-            if (Uname.contains("admin") && PassW.contains("admin")){
-                intent = Intent(this, SelectDeviceActivity::class.java)
-                startActivity(intent)
-            } else {
-                Toast.makeText(applicationContext, "wrong Username or Password",Toast.LENGTH_LONG).show()
+
+
+        fun login(){
+            val request = UserRequest()
+            request.username = textUsername.text.toString().trim()
+            request.password = textPassword.text.toString().trim()
+
+            val retro = Retro().getRetroClientInstance().create(UserApi::class.java)
+            retro.login(request).enqueue(object : Callback<UserResponse>{
+                override fun onResponse(
+                    call: retrofit2.Call<UserResponse>,
+                    response: Response<UserResponse>
+                ) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onFailure(call: retrofit2.Call<UserResponse>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+        }
+
+        fun initAction(){
+            ButLogin.setOnClickListener {
+                login()
             }
         }
+
+        initAction()
+
+
     }
 }
