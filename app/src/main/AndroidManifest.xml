@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AntiThieft">
         <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignOutActivity"
+            android:exported="false" />
+        <activity
             android:name=".SosActivity"
             android:exported="false" />
         <activity

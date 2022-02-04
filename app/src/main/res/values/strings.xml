@@ -1,13 +1,16 @@
 <resources>
     <string name="app_name">AntiThieft</string>
     <string name="pleaseSignin">Please Sign In</string>
+    <string name="pleaseRegist">Please Register</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="confPass">Confirm Password</string>
     <string name="donthaveAcc">You don\'t have any account?</string>
     <string name="register">Register</string>
     <string name="renenver">Remember Me?</string>
     <string name="signin">Sign In</string>
     <string name="rememberMe">Remember Me</string>
+    <string name="logout">Logout</string>
 
 
     <string name="selectDevice">Select Device</string>
